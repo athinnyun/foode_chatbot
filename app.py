@@ -50,6 +50,14 @@ def get_message():
     # return selected item to the user
     return random.choice(sample_responses)
 
+#chooses an automated response to the message depending on the substance of the message
+def get_automated_message(message):
+    response = ["With FoodE, you have a ton of options to choose from. Visit our facebook here: https://www.facebook.com/FoodEOfficial/"
+    if "restaurant" || "food" || "eat" in message
+                return response[1]
+    else 
+                return "I'm sorry, we don't quite understand."
+     
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
     #sends user the text message provided via input response parameter
