@@ -60,11 +60,13 @@ def get_automated_message(message):
     response_2 = "You can contact us by emailing foodEofficial@gmail.com with any comments or concerns. Also, feel free to reach out to us on instagram @foodEOfficial!/"
     about = "FoodE is a fun and innovative way to connect with local restaurants in order to get the delicious meals you deserve. Eating out has never been so easy and accessible. Save the meals you want, discard the ones you don't."
     dev_message = "FoodE is still in development, but like us on FaceBook, follow us on Instagram, and sign up for our mailing list to stay up to date on the latest versions of the app."
-    how_are_you_replies = ["I'm hungry, let's find a place to eat.", "I'm happy you're here.", "I'm sad that millions of people struggle to decide where to eat every day. If only they had access to FoodE..."]
-    celeb_replies = ["David Chang is chef and restaranteur who explores the culture and evolution of staples from around the world like pizza on his Netflix show, \"Ugly Delicious\". FoodE Fun Fact: He's from Northern Virginia!",
-			 "Michelle Obama's \"Let's Move!\" campaign encouraged youth to eat healthier foods and exercise more. FoodE Fun Fact: She had bee hives installed on the White House South Lawn!",
-			 "Gordon Ramsay is a celebrity chef known for his high-end restaurants and variety of food-based TV series. FoodE Fun Fact: He was raised in the William Shakespeare's birthplace!",
-			 "Anthony Bourdain was a chef and food critic famous for his exploration of diverse cultures and their foods in \"Anthony Bourdain: No Reservations\". May he rest in peace"]
+    how_are_you_replies = ["I'm hungry, let's find a place to eat.", "I'm happy you're here.",
+                           "I'm sad that millions of people struggle to decide where to eat every day. If only they had access to FoodE..."]
+    celeb_replies = [
+        "David Chang is a chef and restaranteur who explores the culture and evolution of staples from around the world like pizza on his Netflix show, \"Ugly Delicious\". FoodE Fun Fact: He's from Northern Virginia!",
+        "Michelle Obama's \"Let's Move!\" campaign encouraged youth to eat healthier foods and exercise more. FoodE Fun Fact: She had bee hives installed on the White House South Lawn!",
+        "Gordon Ramsay is a celebrity chef known for his high-end restaurants and variety of food-based TV series. FoodE Fun Fact: He was raised in the William Shakespeare's birthplace!",
+        "Anthony Bourdain was a chef and food critic famous for his exploration of diverse cultures and their foods in \"Anthony Bourdain: No Reservations\". May he rest in peace"]
     if "problem" in message or "complaint" in message or "confused" in message or "help" in message:
         return response_2
     elif "what" in message and "foode" in message or "this" in message:
@@ -73,16 +75,16 @@ def get_automated_message(message):
         return dev_message
     elif "restaurant" in message or "food" in message or "eat" in message:
         return response
-    elif "how" or "are you" or "what's up" in message:
-	return random.choice(how_are_you_replies)
-    elif "David Chang" in message:
-	return celeb_replies[0]
-    elif "Michelle Obama" in message:
-	return celeb_replies[1]
-    elif "Gordon Ramsay" or "Chef Ramsay" in message:
-	return celeb_replies[2]
-    elif "Anthony Bourdain" in message:
-	return celeb_replies[3]
+    elif "how" in message or "are you" in message or "what's up" in message:
+        return random.choice(how_are_you_replies)
+    elif "David Chang".lower() in message:
+        return celeb_replies[0]
+    elif "Michelle Obama".lower() in message:
+        return celeb_replies[1]
+    elif "Gordon Ramsay".lower() in message or "Chef Ramsay".lower() in message:
+        return celeb_replies[2]
+    elif "Anthony Bourdain".lower() in message:
+        return celeb_replies[3]
     else:
         return "I'm sorry, we don't quite understand."
 
