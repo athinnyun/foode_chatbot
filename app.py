@@ -59,7 +59,7 @@ def get_automated_message(message):
     dev_message = "FoodE is still in development, but like us on FaceBook, follow us on Instagram, and sign up for our mailing \
                 list to stay up to date on the latest versions of the app."
     if "restaurant" || "food" || "eat" in message:
-                return response[1]
+                return response
     elif "problem" || "complaint" || "confused" || "help" in message:
                 return response_2
     elif "what" and ("foode" or "this") in message.lower():
