@@ -54,10 +54,18 @@ def get_message():
 def get_automated_message(message):
     response = "With FoodE, you have a ton of options to choose from. Visit our facebook here: https://www.facebook.com/FoodEOfficial/"
     response_2 = "You can contact us by emailing foodEofficial@gmail.com with any comments or concerns. Also, feel free to reach out to us on instagram @foodEOfficial!/"
+    about = "FoodE is a fun and innovative way to connect with local restaurants in order to get the delicious meals you deserve. \
+                Eating out has never been so easy and accessible. Save the meals you want, discard the ones you don't."
+    dev_message = "FoodE is still in development, but like us on FaceBook, follow us on Instagram, and sign up for our mailing \
+                list to stay up to date on the latest versions of the app."
     if "restaurant" || "food" || "eat" in message:
                 return response[1]
     elif "problem" || "complaint" || "confused" || "help" in message:
                 return response_2
+    elif "what" and ("foode" or "this") in message.lower():
+                return about
+    elif "when" and ("foode" or "app" or "release") in message.lower():
+                return dev_message
     else: 
                 return "I'm sorry, we don't quite understand."
                 
