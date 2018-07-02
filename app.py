@@ -52,11 +52,16 @@ def get_message():
 
 #chooses an automated response to the message depending on the substance of the message
 def get_automated_message(message):
-    response = ["With FoodE, you have a ton of options to choose from. Visit our facebook here: https://www.facebook.com/FoodEOfficial/"
-    if "restaurant" || "food" || "eat" in message
+    response = "With FoodE, you have a ton of options to choose from. Visit our facebook here: https://www.facebook.com/FoodEOfficial/"
+    response_2 = "You can contact us by emailing foodEofficial@gmail.com with any comments or concerns. Also, feel free to reach out to us on instagram @foodEOfficial!/"
+    if "restaurant" || "food" || "eat" in message:
                 return response[1]
-    else 
+    elif "problem" || "complaint" || "confused" || "help" in message:
+                return response_2
+    else: 
                 return "I'm sorry, we don't quite understand."
+                
+
      
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
