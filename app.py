@@ -55,7 +55,7 @@ def get_automated_message(message):
     response = "With FoodE, you have a ton of options to choose from. Visit our facebook here: https://www.facebook.com/FoodEOfficial/"
     response_2 = "You can contact us by emailing foodEofficial@gmail.com with any comments or concerns. Also, feel free to reach out to us on instagram @foodEOfficial!/"
     if "restaurant" || "food" || "eat" in message:
-                return response[1]
+                return response
     elif "problem" || "complaint" || "confused" || "help" in message:
                 return response_2
     else: 
